@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "baseUrl": "./src",
+    "paths": {
+      "@app/*": ["./*", "index.ts"],
+      "@config/*": ["config/*", "config"],
+      "@middlewares/*": ["middlewares/*", "middlewares"],
+      "@utils/*": ["utils/*", "utils"]
+    },
+    "rootDir": "src",
+    "sourceMap": true,
+    "target": "es5",
+    "lib": []
+  },
+  "exclude": ["node_modules", "**/*.[spec|test].ts"],
+  "include": ["src/**/*", "test/user"]
+}
