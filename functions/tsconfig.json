@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "module": "CommonJS",
     "moduleResolution": "node",
-    "outDir": "dist",
+    "noUnusedLocals": false,
+    "outDir": "lib",
     "baseUrl": "./src",
     "paths": {
       "@app/*": ["./*", "index.ts"],
@@ -13,9 +15,12 @@
     },
     "rootDir": "src",
     "sourceMap": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
     "target": "es5",
     "lib": []
   },
+  "compileOnSave": true,
   "exclude": ["node_modules", "**/*.[spec|test].ts"],
   "include": ["src/**/*", "test/user"]
 }

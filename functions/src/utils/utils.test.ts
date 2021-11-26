@@ -1,4 +1,4 @@
-import { adder } from './';
+import { adder } from '.';
 
 describe('adder', () => {
   test('should take any number of numbers', () => {});

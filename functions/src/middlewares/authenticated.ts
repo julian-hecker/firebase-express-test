@@ -1,13 +1,20 @@
-import * as admin from 'firebase-admin';
+import { NextFunction, Request, Response } from 'express';
 import httpError from 'http-errors';
 
-export const isAuthenticated = async (req, res, next) => {
+import { auth } from '@config/';
+
+export const isAuthenticated = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   try {
     const { authorization } = req.headers;
+    if (!authorization) throw httpError(401);
 
     const token = authorization.split('Bearer ')[1];
 
-    const decoded = await admin.auth().verifyIdToken(token);
+    const decoded = await auth.verifyIdToken(token);
     res.locals = {
       ...res.locals,
       uid: decoded.uid,
